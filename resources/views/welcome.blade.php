@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ronil Cajan is a PHP Web Developer with holistic knowledge in web development.">
+    <meta name="author" content="Ronil Cajan, PHP Web Developer">
 
-    <title>Laravel</title>
-
+    <title>Ronil Cajan | Portfolio</title>
+    <link rel="shortcut icon" href="{{ asset('img/rontech.png') }}" type="image/x-icon">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
@@ -15,13 +17,12 @@
 
 <body class="antialiased">
     <div class="bg-white">
-        <header class="absolute inset-x-0 top-0 z-50">
+        <header class="absolute inset-x-0 top-0 z-50 ">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
-                    <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Your Company</span>
-                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                            alt="">
+                    <a href="/" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Ronil Cajan</span>
+                        <img class="h-8 w-auto" src="{{ asset('img/rontech.png') }}" alt="">
                     </a>
                 </div>
                 <div class="flex lg:hidden">
@@ -41,11 +42,13 @@
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Home</a>
                     <a href="#work"
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Work</a>
+                    <a href="#services"
+                        class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Services</a>
                     <a href="#education"
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Education</a>
-                    <a href="#"
+                    <a href="#projects"
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Projects</a>
-                    <a href="#"
+                    <a href="#contact"
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Contact</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -69,10 +72,9 @@
                 <div
                     class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
-                        <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only">Your Company</span>
-                            <img class="h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                        <a href="/" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Ronil Cajan</span>
+                            <img class="h-8 w-auto" src="{{ asset('img/rontech.png') }}" alt="">
                         </a>
                         <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" id="hideButton">
                             <span class="sr-only">Close menu</span>
@@ -86,15 +88,17 @@
                         <div class="-my-6 divide-y divide-gray-500/10">
                             <div class="space-y-2 py-6">
                                 <a href="#home"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Home</a>
                                 <a href="#work"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Work</a>
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Work</a>
+                                <a href="#services"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Services</a>
                                 <a href="#education"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Education</a>
-                                <a href="#"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Projects</a>
-                                <a href="#"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Education</a>
+                                <a href="#projects"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Projects</a>
+                                <a href="#contact"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Contact</a>
                             </div>
                             <div class="py-6">
                                 @if (Route::has('login'))
@@ -160,7 +164,7 @@
             </div>
 
             {{-- experiences --}}
-            <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20">
+            <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="work">
                 <p>Work Experience</p>
                 <h1
                     class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
@@ -475,7 +479,7 @@
             </div>
 
 
-            <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="services">
+            <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="contact">
                 <p>Contact Me</p>
                 <h1
                     class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
@@ -534,6 +538,11 @@
 
         <footer class="w-full border-t-2 bg-slate-50 text-center p-10 mt-20">
             <p>Copyright © 2023. All rights reserved. Ronil Cajan - PHP Web Developer</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a href=""><img class="w-10" src="{{ asset('img/logomark.min.svg') }}" alt=""></a>
+                <a href=""><img class="w-10" src="{{ asset('img/codeigniter.png') }}" alt=""></a>
+                <a href=""><img class="w-10" src="{{ asset('img/php.png') }}" alt=""></a>
+            </div>
         </footer>
         <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true">
@@ -541,19 +550,24 @@
                 style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
             </div>
         </div>
+    </div>
+    <script>
+        const mobileMenu = document.getElementById('mobileMenu');
+        const toggleMobileMenu = () => {
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        };
 
-        <script>
-            const mobileMenu = document.getElementById('mobileMenu');
-            const toggleMobileMenu = () => {
-                mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
-            };
+        const showButton = document.getElementById('showButton');
+        showButton.addEventListener('click', toggleMobileMenu);
 
-            const showButton = document.getElementById('showButton');
-            showButton.addEventListener('click', toggleMobileMenu);
+        const closeButton = document.getElementById('hideButton');
+        closeButton.addEventListener('click', toggleMobileMenu);
 
-            const closeButton = document.getElementById('hideButton');
-            closeButton.addEventListener('click', toggleMobileMenu);
-        </script>
+        const closeButtonNavElements = document.querySelectorAll('.hideButton');
+        for (const closeButtonNav of closeButtonNavElements) {
+            closeButtonNav.addEventListener('click', toggleMobileMenu);
+        }
+    </script>
 </body>
 
 </html>
