@@ -12,7 +12,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="antialiased">
@@ -139,7 +141,20 @@
                     <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">I AM RONIL CAJAN
                     </h1>
                     <p class="text-lg leading-8 text-gray-600">A PHP DEVELOPER</p>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt
+                    <div class="flex items-center justify-center gap-x-6 mt-2">
+                        <a href=""><img class="w-5" src="{{ asset('img/github.png') }}"
+                                alt=""></a>
+                        <a href=""><img class="w-5" src="{{ asset('img/linkedin.png') }}"
+                                alt=""></a>
+                        <a href=""><img class="w-5" src="{{ asset('img/twitter.png') }}"
+                                alt=""></a>
+                        <a href=""><img class="w-5" src="{{ asset('img/skype.png') }}"
+                                alt=""></a>
+                        <a href=""><img class="w-5" src="{{ asset('img/gmail.png') }}"
+                                alt=""></a>
+
+                    </div>
+                    <p class="mt-3 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt
                         sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
                         aliqua.</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
