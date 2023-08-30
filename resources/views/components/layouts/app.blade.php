@@ -3,6 +3,7 @@
 
 <head>
     @include('components.partials.head')
+    @livewireStyles
 </head>
 
 <body class="font-sans antialiased">
@@ -23,8 +24,12 @@
             {{ $slot }}
         </main>
 
-
     </div>
+
+
+    @livewireScripts
+    @stack('custom-script')
 </body>
+
 
 </html>

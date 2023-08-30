@@ -1,1 +1,1 @@
-<img class="w-20" src="{{ asset('img/rontech.png') }}">
+<img class="w-6" src="{{ asset('img/rontech.png') }}">
