@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProfileController;
-use App\Livewire\Experience;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,22 +15,18 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::group([
-    'middleware' => 'guest'
-],function () {
-    Route::get('/', [HomeController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
 });
 
-// Route::group(function(){
+Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-// })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
+});
 
-Route::prefix('admin/')->group(function(){
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-    Route::get('experience', Experience::class)->name('experience');
-    Route::get('experience/create', Experience::class)->name('experience.create');
-})->middleware(['auth', 'verified']);
 
 
 Route::middleware('auth')->group(function () {
