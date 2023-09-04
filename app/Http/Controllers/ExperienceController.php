@@ -23,7 +23,11 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create Experience';
+        
+        return view('experience.create',[
+            'title' => $title,
+        ]);
     }
 
     /**

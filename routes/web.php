@@ -19,12 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
+    Route::get('/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
 });
 
 

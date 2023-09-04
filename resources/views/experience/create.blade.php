@@ -12,7 +12,7 @@
 
 
 
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2 ">
 
             <div class="flex justify-between mb-5">
                 <nav class="flex" aria-label="Breadcrumb">
@@ -36,12 +36,9 @@
                         </li>
                     </ol>
                 </nav>
-
-                <x-primary-button class="mb-2" onclick="location.href='{{ route('experience.create') }}'"> Create
-                    Experience </x-primary-button>
             </div>
 
-            @livewire('experience.experience-list')
+            @livewire('experience.create-experience')
         </div>
     </div>
 

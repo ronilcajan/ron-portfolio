@@ -10,7 +10,7 @@ class ExperienceList extends Component
 {
     use WithPagination;
 
-    public $search = '';
+    public $search ='';
 
     
     public function render()
@@ -23,7 +23,7 @@ class ExperienceList extends Component
         });
 
         return view('livewire.experience.experience-list',[
-            'works' => $works->paginate(10),
+            'works' =>  $works->paginate(5),
         ]);
     }
 }
