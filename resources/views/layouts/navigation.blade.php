@@ -16,8 +16,9 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('experience')" :active="request()->routeIs('experience')">
+                    <x-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')">
                         {{ __('Experience') }}
                     </x-nav-link>
                 </div>

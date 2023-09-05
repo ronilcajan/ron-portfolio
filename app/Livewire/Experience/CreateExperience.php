@@ -21,20 +21,20 @@ class CreateExperience extends Component
     #[Rule('required')] 
     public $date_ended  ='';
 
-    public $present_work  ='';
-
     #[Rule('required|min:10')] 
     public $description  ='';
 
-    public function save(){
+    public $present_work  ='';
+
+
+    public function create(){
+        
         $validated =  $this->validate();
 
         Experience::create($validated);
- 
-        $this->reset(); 
-        
-        return $this->back()->with('status', 'Post updated!');
 
+        return redirect(route('experience.create'))->with('status', 'Experience created.');
+        
     }
 
     
