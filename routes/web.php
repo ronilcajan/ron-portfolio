@@ -26,6 +26,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
     Route::get('/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
+    Route::get('/experience/{exp}/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
+    Route::post('/experience/{exp}/update', [ExperienceController::class, 'update'])->name('experience.update');
+
 });
 
 

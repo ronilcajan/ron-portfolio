@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="keywords" content="PHP, Codeigniter, Laravel, HTML, CSS, JavaScript, Web developer, web application">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -30,7 +31,8 @@
             </header>
         @endif
         @if (session('status'))
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2 ">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2 " x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)"
+                x-show="show" x-transition>
                 <div class='flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800'
                     class="" role="alert">
                     <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

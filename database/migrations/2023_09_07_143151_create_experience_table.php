@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('company');
             $table->date('date_started');
-            $table->date('date_ended');
+            $table->date('date_ended')->nullable();
             $table->boolean('present_work')->default(false);
             $table->string('description');
             $table->timestamps();

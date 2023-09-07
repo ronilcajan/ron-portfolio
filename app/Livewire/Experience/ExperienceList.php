@@ -13,6 +13,13 @@ class ExperienceList extends Component
     public $search ='';
 
     
+    public function delete(Experience $experience){
+        $experience->delete();
+
+        return redirect('/experience')->with('status', 'Data has been deleted');
+    }
+
+
     public function render()
     {
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Experience;
 use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
@@ -31,14 +32,6 @@ class ExperienceController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(string $id)
@@ -49,17 +42,34 @@ class ExperienceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Experience $exp)
     {
-        //
+        $title = 'Edit Experience';
+        
+        return view('experience.edit',[
+            'title' => $title,
+            'exp' => $exp
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Experience $exp)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'company' => 'required',
+            'date_started' => 'required',
+            'date_ended' => 'required',
+            'description' => 'required|min:10',
+        ]);
+
+        $update = $exp->update($validated);
+
+        if($update){
+            return redirect()->back()->with('status', 'Updated');
+        }
     }
 
     /**
