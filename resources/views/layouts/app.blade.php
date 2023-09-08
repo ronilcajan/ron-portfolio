@@ -33,7 +33,7 @@
         @if (session('status'))
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2 " x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)"
                 x-show="show" x-transition>
-                <div class='flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800'
+                <div class='flex items-center p-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800'
                     class="" role="alert">
                     <svg class="flex-shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor" viewBox="0 0 20 20">

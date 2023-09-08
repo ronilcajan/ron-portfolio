@@ -10,9 +10,10 @@ class ExperienceList extends Component
 {
     use WithPagination;
 
-    public $search ='';
+    public $search = '';
 
-    
+    public $entries = 5;
+
     public function delete(Experience $experience){
         $experience->delete();
 
@@ -29,8 +30,11 @@ class ExperienceList extends Component
             return $works->where('title', 'like', '%'.$this->search.'%');
         });
 
+        $works =  $works->paginate($this->entries);
+
+
         return view('livewire.experience.experience-list',[
-            'works' =>  $works->paginate(5),
+            'works' =>  $works,
         ]);
     }
 }

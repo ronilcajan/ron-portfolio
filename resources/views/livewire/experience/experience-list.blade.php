@@ -1,6 +1,22 @@
 <div>
 
-    <div class="flex justify-end">
+    <div class="flex justify-between">
+
+        <div class="flex align-middle">
+            <p class="p-2"> Show</p>
+            <select id="small" wire:model.live="entries"
+                class="block w-full p-2 pr-8 mb-6 text-sm text-gray-900 border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option>5</option>
+                <option>10</option>
+                <option>25</option>
+                <option>50</option>
+                <option value="1000000">All</option>
+            </select>
+            <p class="p-2"> entries</p>
+
+        </div>
+
+
         <x-text-input class="mb-3" placeholder="Enter search" wire:model.live="search"></x-text-input>
     </div>
 
