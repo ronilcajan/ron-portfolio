@@ -30,8 +30,10 @@
                     </ol>
                 </nav>
             </div>
-
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-5">
+            @php
+                $present_work = $exp->present_work ? 'true' : 'false';
+            @endphp
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-5" x-data="{ isChecked: {{ $present_work }} }">
                 <form action="{{ route('experience.update', $exp->id) }}" method="POST">
                     @csrf
                     <div class="mb-3">
@@ -51,6 +53,13 @@
                             <x-input-error :messages="$message"></x-input-error>
                         @enderror
                     </div>
+                    <div class="flex items-center mb-4">
+                        <input id="present_work" type="checkbox" value="nice" x-model="isChecked" name="present_work"
+                            wire:model="present_work"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <label for="present_work" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I am
+                            currently working here</label>
+                    </div>
                     <div class="flex mb-3">
                         <div class="w-full mr-2">
                             <x-input-label value="Date started" class="mb-2"></x-input-label>
@@ -60,7 +69,7 @@
                                 <x-input-error :messages="$message"></x-input-error>
                             @enderror
                         </div>
-                        <div class="w-full">
+                        <div class="w-full" x-bind:class="{ 'hidden': isChecked }" x-transition>
                             <x-input-label value="Date ended" class="mb-2"></x-input-label>
                             <x-text-input class="w-full mr-2" name="date_ended" type="date"
                                 value="{{ date('Y-m-d', strtotime($exp->date_ended)) }}"></x-text-input>

@@ -62,6 +62,7 @@ class ExperienceController extends Controller
             'company' => 'required',
             'date_started' => 'required',
             'date_ended' => 'required',
+            'present_work' => '',
             'description' => 'required|min:10',
         ]);
 

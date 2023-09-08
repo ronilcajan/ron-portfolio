@@ -84,6 +84,9 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')">
+                {{ __('Experience') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
