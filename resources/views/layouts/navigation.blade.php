@@ -22,6 +22,12 @@
                         {{ __('Experience') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')">
+                        {{ __('Education') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -86,6 +92,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')">
                 {{ __('Experience') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')">
+                {{ __('Education') }}
             </x-responsive-nav-link>
         </div>
 

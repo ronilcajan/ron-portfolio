@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/experience/{exp}/edit', [ExperienceController::class, 'edit'])->name('experience.edit');
     Route::post('/experience/{exp}/update', [ExperienceController::class, 'update'])->name('experience.update');
 
+    Route::get('/education', [EducationController::class, 'index'])->name('education');
+    Route::get('/education/create', [EducationController::class, 'create'])->name('education.create');
+    Route::post('/education/store', [EducationController::class, 'store'])->name('education.store');
+    Route::get('/education/{education}/edit', [EducationController::class, 'edit'])->name('education.edit');
+    Route::put('/education/{education}/update', [EducationController::class, 'update'])->name('education.update');
 });
 
 

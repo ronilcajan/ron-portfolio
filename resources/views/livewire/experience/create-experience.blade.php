@@ -25,7 +25,7 @@
                 <label for="present_work" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I am
                     currently working here</label>
             </div>
-            <div class="flex mb-3">
+            <div class="lg:flex mb-3">
                 <div class="w-full mr-2">
                     <x-input-label value="Date started" class="mb-2"></x-input-label>
                     <x-text-input class="w-full mr-2" name="date_started" type="date" required

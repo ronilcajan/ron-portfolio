@@ -27,10 +27,10 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">
-                            Title
+                            Course
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Company
+                            School
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Date
@@ -41,24 +41,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($works as $work)
-                        <tr wire:key="{{ $work->id }}"
+                    @forelse ($educations as $education)
+                        <tr wire:key="{{ $education->id }}"
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $work->title }}
+                                {{ $education->course }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $work->company }}
+                                {{ $education->school }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ date('M-d-Y', strtotime($work->date_started)) }} -
-                                {{ $work->present_work ? 'Present' : date('M-d-Y', strtotime($work->date_started)) }}
+                                {{ date('M-d-Y', strtotime($education->date_started)) }} -
+                                {{ date('M-d-Y', strtotime($education->date_graduated)) }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('experience.edit', $work->id) }}"
+                                <a href="{{ route('education.edit', $education->id) }}"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <a href="#" wire:click="delete({{ $work->id }})"
+                                <a href="#" wire:click="delete({{ $education->id }})"
                                     class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                             </td>
                         </tr>
@@ -75,6 +75,6 @@
         </div>
     </div>
     <div class="mt-3">
-        {{ $works->links() }}
+        {{ $educations->links() }}
     </div>
 </div>

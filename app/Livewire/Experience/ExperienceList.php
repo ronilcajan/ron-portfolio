@@ -14,13 +14,6 @@ class ExperienceList extends Component
 
     public $entries = 5;
 
-    public function delete(Experience $experience){
-        $experience->delete();
-
-        return redirect('/experience')->with('status', 'Data has been deleted');
-    }
-
-
     public function render()
     {
 
@@ -37,4 +30,11 @@ class ExperienceList extends Component
             'works' =>  $works,
         ]);
     }
+
+    public function delete(Experience $experience){
+        $experience->delete();
+
+        return redirect('/experience')->with('status', 'Experience has been deleted');
+    }
+
 }

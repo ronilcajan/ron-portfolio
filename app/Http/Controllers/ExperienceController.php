@@ -32,14 +32,6 @@ class ExperienceController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Experience $exp)
@@ -71,13 +63,5 @@ class ExperienceController extends Controller
         if($update){
             return redirect()->back()->with('status', 'Updated');
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

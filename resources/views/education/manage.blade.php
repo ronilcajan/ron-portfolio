@@ -4,18 +4,18 @@
             {{ __($title) }}
         </h2>
     </x-slot>
-
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2">
             <div class="flex justify-between mb-5">
 
                 <x-breadcrumb :title='$title'></x-breadcrumb>
 
-                <x-primary-button class="mb-2" onclick="location.href='{{ route('experience.create') }}'"> Create
-                    Experience </x-primary-button>
+                <x-primary-button class="mb-2" onclick="location.href='{{ route('education.create') }}'"> Create
+                    Education </x-primary-button>
             </div>
 
-            @livewire('experience.experience-list')
+
+            @livewire('education.show-education')
         </div>
     </div>
 
