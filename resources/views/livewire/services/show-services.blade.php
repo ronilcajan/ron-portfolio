@@ -30,10 +30,10 @@
                             Title
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Company
+                            Icon
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Date
+                            Description
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -41,24 +41,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($works as $work)
-                        <tr wire:key="{{ $work->id }}"
+                    @forelse ($services as $service)
+                        <tr wire:key="{{ $service->id }}"
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $work->title }}
+                                {{ $service->title }}
                             </th>
                             <td class="px-6 py-4">
-                                {{ $work->company }}
+                                <img width="30" src="{{ asset('storage/' . $service->icon) }}" />
                             </td>
                             <td class="px-6 py-4">
-                                {{ date('M-d-Y', strtotime($work->date_started)) }} -
-                                {{ $work->present_work ? 'Present' : date('M-d-Y', strtotime($work->date_ended)) }}
+                                {{ $service->description }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="{{ route('experience.edit', $work->id) }}"
+                                <a href="{{ route('education.edit', $service->id) }}"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <a href="#" wire:click="delete({{ $work->id }})"
+                                <a href="#" wire:click="delete({{ $service->id }})"
                                     class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                             </td>
                         </tr>
@@ -75,6 +74,6 @@
         </div>
     </div>
     <div class="mt-3">
-        {{ $works->links() }}
+        {{ $services->links() }}
     </div>
 </div>

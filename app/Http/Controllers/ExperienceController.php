@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExperienceFormRequest;
 use App\Models\Experience;
-use Illuminate\Http\Request;
 
 class ExperienceController extends Controller
 {
@@ -31,6 +31,20 @@ class ExperienceController extends Controller
         ]);
     }
 
+     /**
+     * Store a newly created resource in storage.
+     */
+    public function store(ExperienceFormRequest $request)
+    {
+        $validated = $request->validated();
+        
+        $validated['present_work'] = $request->has('present_work') ? true : false;
+        
+        Experience::create($validated);
+
+        return redirect()->back()->with('status', 'Experience created'); 
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -47,16 +61,12 @@ class ExperienceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Experience $exp)
+    public function update(ExperienceFormRequest $request, Experience $exp)
     {
-        $validated = $request->validate([
-            'title' => 'required',
-            'company' => 'required',
-            'date_started' => 'required',
-            'date_ended' => 'required',
-            'present_work' => '',
-            'description' => 'required|min:10',
-        ]);
+        
+        $validated = $request->validated();
+            
+        $validated['present_work'] = $request->has('present_work') ? true : false;
 
         $update = $exp->update($validated);
 

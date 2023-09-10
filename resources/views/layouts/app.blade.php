@@ -1,3 +1,4 @@
+@props(['title'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -7,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="keywords" content="PHP, Codeigniter, Laravel, HTML, CSS, JavaScript, Web developer, web application">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $title }} | {{ config('app.name', 'Laravel') }}</title>
 
     <link rel="shortcut icon" href="{{ asset('img/rontech.png') }}" type="image/x-icon">
 
@@ -18,6 +19,16 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    @stack('links')
+    <style>
+        div.tox.tox-tinymce {
+            width: 100% !important;
+        }
+
+        div.tox-notifications-container {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
@@ -54,7 +65,9 @@
             {{ $slot }}
         </main>
     </div>
+
     @livewireScripts
+    @stack('scripts')
 </body>
 
 </html>

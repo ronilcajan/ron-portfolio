@@ -28,6 +28,12 @@
                         {{ __('Education') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')">
+                        {{ __('Services') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -95,6 +101,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')">
                 {{ __('Education') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')">
+                {{ __('Services') }}
             </x-responsive-nav-link>
         </div>
 

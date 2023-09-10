@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="{{ $title }}">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __($title) }}
@@ -11,7 +11,7 @@
                 <x-breadcrumb :title='$title'></x-breadcrumb>
 
                 <x-primary-button class="mb-2" onclick="location.href='{{ route('education.create') }}'"> Create
-                    Education </x-primary-button>
+                    {{ $title }} </x-primary-button>
             </div>
 
 

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ $title }} | {{ config('app.name', 'Laravel') }}</title>
+
+    <link rel="shortcut icon" href="{{ asset('img/rontech.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -23,7 +25,7 @@
                 <div class="flex lg:flex-1">
                     <a href="/" class="-m-1.5 p-1.5">
                         <span class="sr-only">Ronil Cajan</span>
-                        <img class="h-8 w-auto" src="{{ asset('img/rontech.png') }}" alt="">
+                        <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                     </a>
                 </div>
                 <div class="flex lg:hidden">
@@ -185,66 +187,21 @@
                     Check My Expereince</h1>
 
                 <ol class="relative border-l border-gray-200 dark:border-gray-700 mt-10">
-                    <li class="mb-10 ml-4">
-                        <div
-                            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September
-                            2020 - Present</time>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Special Science Teacher
-                            I</h3>
-                        <h4 class="text-md font-semibold text-gray-900 dark:text-white">Department of Education
-                        </h4>
-                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">I serve as a
-                            dedicated
-                            teacher in a secondary school, specializing in the instruction of ICT to students
-                            from Grade
-                            7 to Grade 10. Beyond teaching, I also hold the role of the school's ICT
-                            coordinator,
-                            overseeing the management and security of vital school data. In my dual capacity as
-                            an
-                            educator and ICT
-                            coordinator, I contribute to the empowerment of students while ensuring the
-                            integrity of the
-                            school's digital information flow.</p>
-                    </li>
-                    <li class="mb-10 ml-4">
-                        <div
-                            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Aug
-                            2020 -
-                            May 2021 (9 months)</time>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Web Developer</h3>
-                        <h4 class="text-md font-semibold text-gray-900 dark:text-white">Digs Design, Inc</h4>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Collaborating with
-                            development team for
-                            solving web development challenges.
-                            Self-directed research and development into
-                            implementation of custom plugin and theme
-                            coding.
-                            Consistent and reliable communication with
-                            team and project managers for providing time
-                            estimates, project archetyping, and project
-                            scoping.</p>
-                    </li>
-                    <li class="ml-4">
-                        <div
-                            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">May
-                            2019
-                            to July 2019 (3 months)</time>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Digital Marketing
-                            Intern</h3>
-                        <h4 class="text-md font-semibold text-gray-900 dark:text-white">Syntactics, Inc</h4>
-                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Convey the right
-                            business
-                            message and reach
-                            target audience with personalized marketing
-                            strategies by the digital marketing team.
-                        </p>
-                    </li>
+                    @foreach ($experiences as $experience)
+                        <li class="mb-10 ml-4">
+                            <div
+                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                            </div>
+                            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                                {{ date('M Y', strtotime($experience->date_started)) }} -
+                                {{ $experience->present_work ? 'Present' : date('M Y', strtotime($experience->date_ended)) }}</time>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $experience->title }}
+                            </h3>
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white">{{ $experience->company }}
+                            </h4>
+                            {!! $experience->description !!}
+                        </li>
+                    @endforeach
                 </ol>
 
             </div>
@@ -268,33 +225,18 @@
 
 
                 <div class="flex flex-wrap">
-                    <div class="lg:w-1/3 md:w-1/2 sm:w-full p-1">
-                        <div
-                            class="bg-white px-10 py-12 border items-center text-center hover:shadow-lg hover:bg-indigo-100 border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="mx-auto" width="60" src="{{ asset('img/s1.png') }}" alt="">
+                    @foreach ($services as $service)
+                        <div class="lg:w-1/2 md:w-1/2 sm:w-full p-1">
+                            <div
+                                class="bg-white px-8 py-12 border items-center text-center hover:shadow-lg hover:bg-indigo-100 border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+                                <img class="mx-auto" width="60" src="{{ asset('storage/' . $service->icon) }}"
+                                    alt="">
 
-                            <h4 class="my-4 text-md font-bold">Web Development</h4>
-                            <p>fsdfds fsdf sdfdsfds fsdf sdfsd fdsfds</p>
+                                <h4 class="my-4 text-md font-bold">{{ $service->title }}</h4>
+                                <p>{{ $service->description }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="lg:w-1/3 md:w-1/2 sm:w-full p-1">
-                        <div
-                            class="bg-white px-10 py-12 border items-center text-center  border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="mx-auto" src="{{ asset('img/s1.png') }}" alt="">
-
-                            <h4 class="my-4 text-md text-gray-950 font-bold">Web Development</h4>
-                            <p>fsdfds fsdf sdfdsfds fsdf sdfsd fdsfds</p>
-                        </div>
-                    </div>
-                    <div class="lg:w-1/3 md:w-1/2 sm:w-full p-1">
-                        <div
-                            class="bg-white px-10 py-12 border items-center text-center  border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="mx-auto" src="{{ asset('img/s1.png') }}" alt="">
-
-                            <h4 class="my-4 text-md text-gray-950 font-bold">Web Development</h4>
-                            <p>fsdfds fsdf sdfdsfds fsdf sdfsd fdsfds</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>
@@ -318,31 +260,23 @@
                     Check My Education</h1>
 
                 <ol class="relative border-l border-gray-200 dark:border-gray-700 mt-10">
-                    <li class="mb-10 ml-4">
-                        <div
-                            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September
-                            2020</time>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Bachelor
-                            of
-                            Science in Information Technology</h3>
-                        <h4 class="text-md font-semibold text-gray-900 dark:text-white">University of Science
-                            and
-                            Technology of Southern Philippines -
-                            Oroqueita</h4>
-                        <ul class="list-disc text-gray-500 dark:text-gray-400 ml-6 mt-2">
-                            <li>
-                                IT Governor, IT Club
-                            </li>
-                            <li>
-                                DOST Scholar
-                            </li>
-                            <li>
-                                IT Passport Level 1 Passer
-                            </li>
-                        </ul>
-                    </li>
+                    @foreach ($educations as $education)
+                        <li class="mb-10 ml-4">
+                            <div
+                                class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                            </div>
+                            <time
+                                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ date('F Y', strtotime($education->date_started)) }}
+                                - {{ date('F Y', strtotime($education->date_graduated)) }}</time>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $education->course }}
+                            </h3>
+                            <h4 class="text-md font-semibold text-gray-900 dark:text-white">{{ $education->school }}
+                            </h4>
+                            {!! $education->content !!}
+                        </li>
+                    @endforeach
+
+
                 </ol>
 
             </div>
