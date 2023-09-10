@@ -119,6 +119,12 @@
             <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')">
                 {{ __('Services') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')">
+                {{ __('Projects') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')">
+                {{ __('Messages') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

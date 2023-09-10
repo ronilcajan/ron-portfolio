@@ -25,7 +25,7 @@ class HomeController extends Controller
 
         $services = Services::all();
 
-        return view('welcome',[
+        return view('home.manage',[
             'title' => $title,
             'educations' =>  $educations,
             'experiences' =>  $experiences,
@@ -48,6 +48,7 @@ class HomeController extends Controller
 
     public function show(Project $project)
     {
+        
         return view('home.project_details',[
             'project' => $project,
         ]);
