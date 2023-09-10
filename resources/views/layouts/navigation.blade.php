@@ -34,6 +34,17 @@
                         {{ __('Services') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')">
+                        {{ __('Messages') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -56,6 +67,9 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link href="/">
+                            {{ __('View Frontend') }}
+                        </x-dropdown-link>
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
@@ -115,6 +129,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link href="/">
+                    {{ __('View Frontend') }}
+                </x-responsive-nav-link>
+
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>

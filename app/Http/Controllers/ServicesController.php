@@ -41,7 +41,7 @@ class ServicesController extends Controller
         $validated = $request->validated();
 
         if($request->hasFile('icon')){
-            $validated['icon'] = $request->file('icon')->store('icon','public');
+            $validated['icon'] = $request->file('icon')->store('services','public');
         }
 
         Services::create($validated);
@@ -49,36 +49,32 @@ class ServicesController extends Controller
         return redirect()->back()->with('status', 'Services created');
 
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Services $services)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Services $services)
     {
-        //
+        $title = 'Edit Services';
+        
+        return view('services.edit',[
+            'title' => $title,
+            'services' => $services,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Services $services)
+    public function update(ServicesFormRequest $request, Services $services)
     {
-        //
-    }
+        $validated = $request->validated();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Services $services)
-    {
-        //
+        if($request->hasFile('icon')){
+            $validated['icon'] = $request->file('icon')->store('services','public');
+        }
+
+        $services->update($validated);
+
+        return redirect()->back()->with('status', 'Services updated');
     }
 }

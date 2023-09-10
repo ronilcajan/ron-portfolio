@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -21,10 +23,21 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/message/store', [HomeController::class, 'store'])->name('message.store');
+Route::get('/project/{project}/view', [HomeController::class, 'show'])->name('project.view');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/messages', [MessagesController::class, 'index'])->name('messages');
+
+    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+    Route::post('/projects/store', [ProjectController::class, 'store'])->name('projects.store');
+    Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
+    Route::put('/projects/{project}/update', [ProjectController::class, 'update'])->name('projects.update');
 
     Route::get('/experience', [ExperienceController::class, 'index'])->name('experience');
     Route::get('/experience/create', [ExperienceController::class, 'create'])->name('experience.create');
@@ -41,6 +54,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/services', [ServicesController::class, 'index'])->name('services');
     Route::get('/services/create', [ServicesController::class, 'create'])->name('services.create');
     Route::post('/services/store', [ServicesController::class, 'store'])->name('services.store');
+    Route::get('/services/{services}/edit', [ServicesController::class, 'edit'])->name('services.edit');
+    Route::put('/services/{services}/update', [ServicesController::class, 'update'])->name('services.update');
+
 });
 
 

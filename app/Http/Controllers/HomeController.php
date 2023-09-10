@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MessageFormRequest;
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Messages;
+use App\Models\Project;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -27,6 +30,26 @@ class HomeController extends Controller
             'educations' =>  $educations,
             'experiences' =>  $experiences,
             'services' =>  $services,
+        ]);
+    }
+
+
+     /**
+     * Store a newly created resource in storage.
+     */
+    public function store(MessageFormRequest $request)
+    {
+        $validated = $request->validated();
+
+        Messages::create($validated);
+
+        return redirect()->back()->with('status', 'Message sent successfully');
+    }
+
+    public function show(Project $project)
+    {
+        return view('home.project_details',[
+            'project' => $project,
         ]);
     }
 }
