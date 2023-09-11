@@ -1,4 +1,4 @@
-<x-home-layout :title="$project->title">
+<x-home-layout :title="$project->title" :profile="$profile">
 
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-28">
 

@@ -60,11 +60,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
 });
 
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::get('/storage-link', function () {
+    $targetFolder = base_path().'/storage/app/public'; 
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; 
+    symlink($targetFolder, $linkFolder);
 });
 
 require __DIR__.'/auth.php';

@@ -52,9 +52,10 @@ class HomeController extends Controller
 
     public function show(Project $project)
     {
-        
+        $profile = User::first();
         return view('home.project_details',[
             'project' => $project,
+            'profile' =>  $profile,
         ]);
     }
 }

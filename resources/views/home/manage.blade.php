@@ -38,7 +38,7 @@
                 <img class="w-12" src="{{ asset('img/alphine.png') }}" alt="">
             </div>
             <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="#"
+                <a href="{{ asset('RonCajan-Resume.pdf') }}" download
                     class="px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Download
                     CV</a>
                 <a href="#projects" class="text-sm font-semibold leading-6 text-gray-900">See my works <span
