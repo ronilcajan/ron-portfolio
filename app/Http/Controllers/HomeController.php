@@ -8,6 +8,7 @@ use App\Models\Experience;
 use App\Models\Messages;
 use App\Models\Project;
 use App\Models\Services;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,11 +26,14 @@ class HomeController extends Controller
 
         $services = Services::all();
 
+        $profile = User::first();
+
         return view('home.manage',[
             'title' => $title,
             'educations' =>  $educations,
             'experiences' =>  $experiences,
             'services' =>  $services,
+            'profile' =>  $profile,
         ]);
     }
 

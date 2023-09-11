@@ -1,4 +1,4 @@
-@props(['title'])
+@props(['title', 'profile'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -132,11 +132,19 @@
 
 
         <footer class="w-full border-t-2 bg-slate-50 text-center p-10 mt-20">
-            <p>Copyright © 2023. All rights reserved. Ronil Cajan - PHP Web Developer</p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href=""><img class="w-10" src="{{ asset('img/logomark.min.svg') }}" alt=""></a>
-                <a href=""><img class="w-10" src="{{ asset('img/codeigniter.png') }}" alt=""></a>
-                <a href=""><img class="w-10" src="{{ asset('img/php.png') }}" alt=""></a>
+            <p>Copyright © 2023. All rights reserved. {{ $profile->name }} Portfolio - PHP Web Developer</p>
+            <div class="flex items-center justify-center gap-x-6 mt-2">
+                <a href="https://github.com/ronilcajan"><img class="w-5" src="{{ asset('img/github.png') }}"
+                        alt=""></a>
+                <a href="https://www.linkedin.com/in/roncajan"><img class="w-5"
+                        src="{{ asset('img/linkedin.png') }}" alt=""></a>
+                <a href="https://twitter.com/RonCajan"><img class="w-5" src="{{ asset('img/twitter.png') }}"
+                        alt=""></a>
+                <a href="https://join.skype.com/invite/VdA7xJErWhiW"><img class="w-5"
+                        src="{{ asset('img/skype.png') }}" alt=""></a>
+                <a href="mailto:{{ $profile->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
+                        alt=""></a>
+
             </div>
         </footer>
         <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
