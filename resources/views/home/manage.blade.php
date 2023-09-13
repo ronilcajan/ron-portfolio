@@ -27,6 +27,8 @@
                         src="{{ asset('img/skype.png') }}" alt=""></a>
                 <a href="mailto:{{ $profile->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
                         alt=""></a>
+                <a href="https://www.youtube.com/channel/UCBOEWZexETNytXLgiNS5aQQ"><img class="w-5"
+                        src="{{ asset('img/youtube.png') }}" alt=""></a>
             </div>
             <p class="mt-3 text-lg leading-8 text-gray-600">{!! $profile->bio !!}</p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
@@ -50,14 +52,13 @@
 
     <div class="mx-auto max-w-2xl sm:py-30 mt-20 mb-20 md:py-20 lg:py-10 bg-indigo-600 p-6 text-white">
         <h3 class="sm:text-4xl md:text-4xl lg:text-5xl">I am happy to know you
-            that 20+ projects done sucessfully!</h3>
+            that 20+ projects done successfully!</h3>
     </div>
 
     {{-- experiences --}}
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="work">
         <p>Work Experience</p>
-        <h1
-            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl">
             Check My Expereince</h1>
 
         <ol class="relative border-l border-gray-200 dark:border-gray-700 mt-10">
@@ -69,9 +70,9 @@
                     <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                         {{ date('M Y', strtotime($experience->date_started)) }} -
                         {{ $experience->present_work ? 'Present' : date('M Y', strtotime($experience->date_ended)) }}</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $experience->title }}
+                    <h3 class="text-lg font-semibold text-gray-900">{{ $experience->title }}
                     </h3>
-                    <h4 class="text-md font-semibold text-gray-900 dark:text-white">{{ $experience->company }}
+                    <h4 class="text-md font-semibold text-gray-900">{{ $experience->company }}
                     </h4>
                     {!! $experience->description !!}
                 </li>
@@ -93,8 +94,7 @@
     {{-- Services --}}
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="services">
         <p>Services</p>
-        <h1
-            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl">
             What I Do</h1>
 
 
@@ -118,8 +118,8 @@
     <div class="inline-flex items-center justify-center w-full my-10 mt-10">
         <hr class="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700">
         <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
-            <svg class="w-4 h-4 text-gray-700 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor" viewBox="0 0 18 14">
+            <svg class="w-4 h-4 text-gray-700 dark:text-gray-300" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
                 <path
                     d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
             </svg>
@@ -129,8 +129,7 @@
     {{-- education --}}
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="education">
         <p>Education</p>
-        <h1
-            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl">
             Check My Education</h1>
 
         <ol class="relative border-l border-gray-200 dark:border-gray-700 mt-10">
@@ -142,9 +141,9 @@
                     <time
                         class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{{ date('F Y', strtotime($education->date_started)) }}
                         - {{ date('F Y', strtotime($education->date_graduated)) }}</time>
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $education->course }}
+                    <h3 class="text-lg font-semibold text-gray-900">{{ $education->course }}
                     </h3>
-                    <h4 class="text-md font-semibold text-gray-900 dark:text-white">{{ $education->school }}
+                    <h4 class="text-md font-semibold text-gray-900">{{ $education->school }}
                     </h4>
                     {!! $education->content !!}
                 </li>
@@ -170,8 +169,7 @@
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="projects">
 
         <p>Recent Projects</p>
-        <h1
-            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl">
             Check My Works</h1>
 
         @livewire('projects.frontend-projects')
@@ -192,8 +190,7 @@
 
     <div class="mx-auto max-w-2xl sm:py-48 md:py-38 lg:py-20" id="contact">
         <p>Contact Me</p>
-        <h1
-            class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl">
             Get In Touch</h1>
 
         <div class="w-full p-1">
@@ -219,43 +216,40 @@
                 <form action="{{ route('message.store') }}" method="POST">
                     @csrf
                     <div class="mb-6">
-                        <label for="name"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your
                             name</label>
                         <input type="text" id="name" name="name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Juan Dela Cruz" required>
                         @error('name')
                             <x-input-error :messages="$message"></x-input-error>
                         @enderror
                     </div>
                     <div class="mb-6">
-                        <label for="email"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your
                             email</label>
                         <input type="email" id="email" name="email"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="name@flowbite.com" required>
                         @error('email')
                             <x-input-error :messages="$message"></x-input-error>
                         @enderror
                     </div>
                     <div class="mb-6">
-                        <label for="subject"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                        <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Your
                             subject</label>
                         <input type="text" id="subject" name="subject"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Need web developer" required>
                         @error('subject')
                             <x-input-error :messages="$message"></x-input-error>
                         @enderror
                     </div>
 
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your
                         message</label>
                     <textarea id="message" rows="4" name="message"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Leave a comment..."></textarea>
                     @error('message')
                         <x-input-error :messages="$message"></x-input-error>
