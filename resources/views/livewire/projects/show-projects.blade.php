@@ -63,10 +63,10 @@
                                     {{ $project->working ? 'Present' : date('M-d-Y', strtotime($project->date_ended)) }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('projects.edit', $project->id) }}"
+                                    <a href="{{ route('projects.edit', $project->id) }}" wire:navigate
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 
-                                    <a href="#" wire:click="delete({{ $project->id }})"
+                                    <a href="#" wire:click="delete({{ $project->id }})" wire:navigate
                                         class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>

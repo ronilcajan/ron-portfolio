@@ -11,7 +11,8 @@
 
                 <x-breadcrumb :title='$title'></x-breadcrumb>
 
-                <x-primary-button class="mb-2" onclick="location.href='{{ route('experience.create') }}'"> Create
+                <x-primary-button class="mb-2" onclick="location.href='{{ route('experience.create') }}'">
+                    Create
                     {{ $title }} </x-primary-button>
             </div>
 

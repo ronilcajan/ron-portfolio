@@ -2,11 +2,12 @@
     <div class="flex flex-wrap mt-10 mb-2">
         @foreach ($projects as $project)
             <div wire:key="{{ $project->id }}" class="lg:w-1/2 md:w-full sm:w-full p-1">
-                <div class=" bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <img class="w-full h-26" src="{{ asset('storage/' . $project->cover_photo) }}" alt="" />
+                <div class="bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="{{ route('project.view', $project->id) }}" wire:navigate>
+                        <img class="lg:h-48 md:h-full sm:h-full" src="{{ asset('storage/' . $project->cover_photo) }}"
+                            alt="" />
                     </a>
-                    <div class="p-5">
+                    <div class="p-5 lg:h-80 sm:h-full">
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 {{ $project->title }}</h5>
@@ -20,7 +21,7 @@
                         @endforeach
 
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {!! Str::limit($project->description, 100, '...') !!} </p>
-                        <a href="{{ route('project.view', $project->id) }}"
+                        <a href="{{ route('project.view', $project->id) }}" wire:navigate
                             class="inline-flex items-center px-3 py-2 mt-5 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             View more
                             <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

@@ -12,36 +12,36 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')">
+                    <x-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')" wire:navigate>
                         {{ __('Experience') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')">
+                    <x-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')" wire:navigate>
                         {{ __('Education') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')">
+                    <x-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')" wire:navigate>
                         {{ __('Services') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')">
+                    <x-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')" wire:navigate>
                         {{ __('Projects') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')">
+                    <x-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')" wire:navigate>
                         {{ __('Messages') }}
                     </x-nav-link>
                 </div>
@@ -67,10 +67,10 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link href="/">
+                        <x-dropdown-link href="/" wire:navigate>
                             {{ __('View Frontend') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('profile.edit')" wire:navigate>
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
@@ -107,22 +107,22 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')">
+            <x-responsive-nav-link :href="route('experience')" :active="request()->routeIs('experience') || request()->routeIs('experience.create')" wire:navigate>
                 {{ __('Experience') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')">
+            <x-responsive-nav-link :href="route('education')" :active="request()->routeIs('education') || request()->routeIs('education.create')" wire:navigate>
                 {{ __('Education') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')">
+            <x-responsive-nav-link :href="route('services')" :active="request()->routeIs('services') || request()->routeIs('services.create')" wire:navigate>
                 {{ __('Services') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')">
+            <x-responsive-nav-link :href="route('projects')" :active="request()->routeIs('projects') || request()->routeIs('projects.create')" wire:navigate>
                 {{ __('Projects') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')">
+            <x-responsive-nav-link :href="route('messages')" :active="request()->routeIs('messages') || request()->routeIs('messages.create')" wire:navigate>
                 {{ __('Messages') }}
             </x-responsive-nav-link>
         </div>
@@ -135,11 +135,11 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link href="/">
+                <x-responsive-nav-link href="/" wire:navigate>
                     {{ __('View Frontend') }}
                 </x-responsive-nav-link>
 
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('profile.edit')" wire:navigate>
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 

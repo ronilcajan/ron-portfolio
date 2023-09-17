@@ -9,7 +9,6 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +22,11 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home/work', [HomeController::class, 'work'])->name('home.work');
+Route::get('/home/services', [HomeController::class, 'services'])->name('home.services');
+Route::get('/home/educations', [HomeController::class, 'education'])->name('home.education');
+Route::get('/home/projects', [HomeController::class, 'projects'])->name('home.projects');
+Route::get('/home/contacts', [HomeController::class, 'contacts'])->name('home.contacts');
 Route::post('/message/store', [HomeController::class, 'store'])->name('message.store');
 Route::get('/project/{project}/view', [HomeController::class, 'show'])->name('project.view');
 
@@ -64,12 +68,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-Route::get('/storage-link', function () {
-    $targetFolder = base_path().'/storage/app/public'; 
-    $linkFolder = $_SERVER['DOCUMENT_ROOT'].'/storage'; 
-    symlink($targetFolder, $linkFolder);
-});
+}); 
 
 require __DIR__.'/auth.php';

@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="{!! $profile->bio !!}">
+    <meta name="keywords" content="PHP, Codeigniter, Laravel, HTML, CSS, JavaScript, Web developer, web application">
 
     <title>{{ $title }} | {{ config('app.name', 'Laravel') }}</title>
 
@@ -43,28 +45,29 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="/"
+                    <a href="/" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Home</a>
-                    <a href="#work"
+                    <a href="{{ route('home.work') }}" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Work</a>
-                    <a href="#services"
+                    <a href="{{ route('home.services') }}" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Services</a>
-                    <a href="#education"
+                    <a href="{{ route('home.education') }}" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Education</a>
-                    <a href="#projects"
+                    <a href="{{ route('home.projects') }}" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Projects</a>
-                    <a href="#contact"
+                    <a href="{{ route('home.contacts') }}" wire:navigate
                         class="text-sm font-semibold leading-6 text-gray-900 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">Contact</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/dashboard') }}"
+                            <a href="{{ url('/dashboard') }}" wire:navigate
                                 class="text-sm font-semibold leading-6 text-gray-900">Dashboard <span
                                     aria-hidden="true">&rarr;</span></a>
                         @else
-                            <a href="{{ url('/login') }}" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-                                    aria-hidden="true">&rarr;</span></a>
+                            <a href="{{ url('/login') }}" wire:navigate
+                                class="text-sm font-semibold leading-6 text-gray-900">Log in
+                                <span aria-hidden="true">&rarr;</span></a>
                         @endauth
                     @endif
 
@@ -92,17 +95,17 @@
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
                             <div class="space-y-2 py-6">
-                                <a href="#home"
+                                <a href="/" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Home</a>
-                                <a href="#work"
+                                <a href="{{ route('home.work') }}" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Work</a>
-                                <a href="#services"
+                                <a href="{{ route('home.services') }}" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Services</a>
-                                <a href="#education"
+                                <a href="{{ route('home.education') }}" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Education</a>
-                                <a href="#projects"
+                                <a href="{{ route('home.projects') }}" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Projects</a>
-                                <a href="#contact"
+                                <a href="{{ route('home.contacts') }}" wire:navigate
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hideButton">Contact</a>
                             </div>
                             <div class="py-6">

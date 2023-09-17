@@ -76,7 +76,7 @@
                     <div class="mb-3">
                         <x-input-label value="Description" class="mb-2"></x-input-label>
                         <textarea id="message" rows="4" name="description"
-                            class="description block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Write work responsibilities...">{{ $project->description }}</textarea>
                         <div>
                             @error('description')
@@ -108,17 +108,5 @@
             </div>
         </div>
     </div>
-
-    @push('scripts')
-        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-
-        <script>
-            tinymce.init({
-                selector: 'textarea.description',
-                width: 900,
-                height: 300
-            });
-        </script>
-    @endpush
 
 </x-app-layout>
