@@ -12,9 +12,9 @@ class FrontendProjects extends Component
     
     public function render()
     {
-        $projects = Project::latest();
+        $projects = Project::orderBy('date_started', 'DESC');
 
-        $projects =  $projects->simplePaginate(8);
+        $projects =  $projects->simplePaginate(6);
 
         return view('livewire.projects.frontend-projects',[
             'projects' => $projects

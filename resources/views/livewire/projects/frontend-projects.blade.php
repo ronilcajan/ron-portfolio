@@ -20,7 +20,8 @@
                                 class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{ $skill }}</span>
                         @endforeach
 
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {!! Str::limit($project->description, 100, '...') !!} </p>
+                        <p class="mb-3 mt-2 font-normal text-gray-700 dark:text-gray-400">
+                            {{ Str::limit($project->description, 100, '...') }} </p>
                         <a href="{{ route('project.view', $project->id) }}" wire:navigate
                             class="inline-flex items-center px-3 py-2 mt-5 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             View more
