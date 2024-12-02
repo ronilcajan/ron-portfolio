@@ -9,6 +9,7 @@ use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServicesController;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,18 @@ use App\Http\Controllers\ServicesController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+if (app()->environment('local')) {
+    Route::get('/storage_link', function () {
+        File::link(
+            storage_path('app/public'), 
+            public_path('storage')
+        );
+        return "Storage link created successfully!";
+    });
+}
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home/work', [HomeController::class, 'work'])->name('home.work');

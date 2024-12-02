@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="{!! $profile->bio !!}">
+    <meta name="description" content="{!! $profile?->bio !!}">
     <meta name="keywords" content="PHP, Codeigniter, Laravel, HTML, CSS, JavaScript, Web developer, web application">
 
     <title>{{ $title }} | {{ config('app.name', 'Laravel') }}</title>
@@ -135,7 +135,7 @@
 
 
         <footer class="w-full border-t-2 bg-slate-50 text-center p-10 mt-20">
-            <p>Copyright © 2023. All rights reserved. {{ $profile->name }} Portfolio - PHP Web Developer</p>
+            <p>Copyright © 2023. All rights reserved. {{ $profile?->name }} Portfolio - PHP Web Developer</p>
             <div class="flex items-center justify-center gap-x-6 mt-2">
                 <a href="https://github.com/ronilcajan"><img class="w-5" src="{{ asset('img/github.png') }}"
                         alt=""></a>
@@ -145,7 +145,7 @@
                         alt=""></a>
                 <a href="https://join.skype.com/invite/VdA7xJErWhiW"><img class="w-5"
                         src="{{ asset('img/skype.png') }}" alt=""></a>
-                <a href="mailto:{{ $profile->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
+                <a href="mailto:{{ $profile?->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
                         alt=""></a>
 
             </div>

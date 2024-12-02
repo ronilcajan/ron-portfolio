@@ -8,14 +8,15 @@
         <div class="text-center">
             <div class="text-center mb-4">
                 <img class="mx-auto rounded-full"
-                    src="{{ $profile->avatar ? asset('storage/' . $profile->avatar) : asset('img/rontech.png') }}"
+                    src="{{ $profile?->avatar ? asset('storage/' . $profile?->avatar) : asset('img/rontech.png') }}"
                     width="200" alt="photo">
             </div>
             <p class="text-lg leading-8 text-gray-600">HELLO!</p>
-            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">I AM
-                {{ Str::upper($profile->name) }}
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                I AM
+                {{ Str::upper($profile?->name) }}
             </h1>
-            <p class="text-lg leading-8 text-gray-600">{{ $profile->position }}</p>
+            <p class="text-lg leading-8 text-gray-600">{{ $profile?->position }}</p>
             <div class="flex items-center justify-center gap-x-6 mt-2">
                 <a href="https://github.com/ronilcajan"><img class="w-5" src="{{ asset('img/github.png') }}"
                         alt=""></a>
@@ -25,19 +26,19 @@
                         alt=""></a>
                 <a href="https://join.skype.com/invite/VdA7xJErWhiW"><img class="w-5"
                         src="{{ asset('img/skype.png') }}" alt=""></a>
-                <a href="mailto:{{ $profile->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
+                <a href="mailto:{{ $profile?->email }}"><img class="w-5" src="{{ asset('img/gmail.png') }}"
                         alt=""></a>
                 <a href="https://www.youtube.com/channel/UCBOEWZexETNytXLgiNS5aQQ"><img class="w-5"
                         src="{{ asset('img/youtube.png') }}" alt=""></a>
             </div>
-            <p class="mt-3 text-lg leading-8 text-gray-600">{!! $profile->bio !!}</p>
-            <div class="mt-10 flex items-center justify-center gap-x-6">
+            <p class="mt-3 text-lg leading-8 text-gray-600">{!! $profile?->bio !!}</p>
+            <div class="mt-10 flex items-center justify-center gap-x-6 flex-wrap">
                 <img class="w-10" src="{{ asset('img/logomark.min.svg') }}" alt="">
                 <img class="w-10" src="{{ asset('img/codeigniter.png') }}" alt="">
                 <img class="w-12" src="{{ asset('img/php.png') }}" alt="">
                 <img class="w-12" src="{{ asset('img/js.png') }}" alt="">
-                <img class="w-12" src="{{ asset('img/livewire.png') }}" alt="">
-                <img class="w-12" src="{{ asset('img/alphine.png') }}" alt="">
+                {{-- <img class="w-12" src="{{ asset('img/livewire.png') }}" alt="">
+                <img class="w-12" src="{{ asset('img/alphine.png') }}" alt=""> --}}
             </div>
             <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a href="{{ asset('RonCajan-Resume.pdf') }}" download
@@ -118,8 +119,8 @@
     <div class="inline-flex items-center justify-center w-full my-10 mt-10">
         <hr class="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700">
         <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
-            <svg class="w-4 h-4 text-gray-700 dark:text-gray-300" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+            <svg class="w-4 h-4 text-gray-700 dark:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 18 14">
                 <path
                     d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
             </svg>
